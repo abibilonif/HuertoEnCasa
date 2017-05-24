@@ -1,14 +1,32 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Huerto en casa
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h2>Nuestro huerto</h2>
+  <ion-list>
+  <ion-item-sliding *ngFor="let huerto of myHuertos">
+    <ion-item class="listHuerto" (click)="changeToHuerto(huerto)">{{huerto.name}}</ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="deleteHuerto(huerto)">
+        Borrar
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+  <div *ngIf="empty">
+  <ion-list>
+    <ion-item >
+      <ion-label floating>Nombre del huerto</ion-label>
+      <ion-input type="text" [(ngModel)]="nombreHuerto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button block (click)="setNameHuerto()">Empezar</button>
+    </ion-item>
+  </ion-list>
+  </div>
 </ion-content>
