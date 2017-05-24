@@ -77,7 +77,7 @@ export class Huerto{
   private getMes(){
     var mes =new Date();
     var locale = "es-Es";
-    var  month = (mes.toLocaleString(locale, { month: "long" }).toUpperCase();
+    var  month = mes.toLocaleString(locale, { month: "long" });
     return month;
   }
   public getName(){
