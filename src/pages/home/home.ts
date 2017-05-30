@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { HuertoPage } from '../huerto/huerto';
 import { HuertoFormPage } from '../huerto-form/huerto-form';
-import {createAotCompiler} from "@angular/compiler";
+import { Platform, ActionSheetController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -14,8 +14,9 @@ import {createAotCompiler} from "@angular/compiler";
 export class HomePage{
   public myHuertos:Array<Huerto>;
   public empty=true;
+  public platform: Platform;
 
-  constructor(public navCtrl: NavController, private storage: Storage, public alertCtrl: AlertController, public modal:ModalController) {
+  constructor(public navCtrl: NavController, private storage: Storage, public alertCtrl: AlertController, public modal:ModalController, public actionSheetCtrl: ActionSheetController) {
     this.myHuertos=[];
     this.storage.get('nameHuerto').then((value) =>{
       if(value!=null) {
@@ -28,19 +29,6 @@ export class HomePage{
       }
     });
   }
-  // saveStorage(){
-  //   this.storage.set('nameHuerto',this.myHuertos);
-  //   if(this.myHuertos.length==0){
-  //     this.empty=true;
-  //   }else{
-  //     this.empty=false;
-  //   }
-  // }
-  // setNameHuerto(){
-  //   this.myHuertos.push(new Huerto(this.nombreHuerto));
-  //   this.saveStorage();
-  //   this.nombreHuerto="";
-  // }
   createHuerto(){
     let modal=this.modal.create(HuertoFormPage);
     modal.present();
@@ -61,13 +49,37 @@ export class HomePage{
               let index=this.myHuertos.indexOf(huerto);
               if(index > -1){
                 this.myHuertos.splice(index, 1);
-                this.storage.remove(huerto.name);
+                this.storage.set(huerto.name,this.myHuertos);
               }
             }
           }
         ]
       });
       confirm.present();
+  }
+  openOptions(huerto) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Opciones',
+      cssClass: 'action-sheets-basic-page',
+      buttons: [
+        {
+          text:'Borrar',
+          role: 'destructive',
+          icon: 'trash',
+          handler: () => {
+            this.deleteHuerto(huerto);
+          }
+        },
+        {
+          text:'Editar',
+          icon: 'create',
+          handler: () => {
+            console.log('Aqui se editara');
+          }
+        }
+      ]
+        });
+    actionSheet.present();
   }
   changeToHuerto(huerto){
     this.navCtrl.push(HuertoPage,{

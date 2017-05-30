@@ -14,18 +14,25 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+$font-family-base: "Oxygen", sans-serif !default;
 
 #mainContent{
   background-image: url("../assets/img/mainBg.jpg");
   background-size: cover;
 }
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+  color:color($colors,light);
+}
 ion-content{
   background-color: transparent !important;
 }
 .toolbar-background{
-  background-color: color($colors,primary1)!important;
-  border-bottom: inset 3px color($colors,dark1) !important;
+    background-color: transparentize((color($colors,dark1)),0.2) !important;
 }
 .toolbar-title{
-color: color($colors,dark1) !important;
+color: white !important;
+}
+button{
+  border-radius: 20px !important;
 }

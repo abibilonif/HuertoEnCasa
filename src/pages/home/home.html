@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header id="mainHeader">
   <ion-navbar>
     <ion-title text-center>
       Huerto en casa
@@ -7,37 +7,15 @@
 </ion-header>
 
 <ion-content padding id="mainContent">
-  <h1>Nuestro huerto</h1>
+  <h1 id="listHuerto">Listado huertos</h1>
   <ion-list>
     <ion-item-sliding class="listHuerto" *ngFor="let huerto of myHuertos">
-      <ion-item class="itemListHuerto" (click)="changeToHuerto(huerto)">{{huerto.name}}</ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="danger" (click)="deleteHuerto(huerto)">
-          Borrar
-        </button>
-      </ion-item-options>
+      <ion-item class="itemListHuerto" (click)="changeToHuerto(huerto)" (press)="openOptions(huerto)">{{huerto.name}}</ion-item>
     </ion-item-sliding>
   </ion-list>
-  <!--<div *ngIf="empty">-->
-    <!--<ion-list>-->
-      <!--<ion-item>-->
-        <!--<ion-label floating>Nombre del huerto</ion-label>-->
-        <!--<ion-input type="text" [(ngModel)]="nombreHuerto"></ion-input>-->
-      <!--</ion-item>-->
-      <!--<ion-item>-->
-        <!--<button ion-button block (click)="setNameHuerto()">Empezar</button>-->
-      <!--</ion-item>-->
-    <!--</ion-list>-->
-  <!--</div>-->
   <ion-fab right bottom>
-    <button ion-fab mini color="secondary1">
-      <ion-icon  name="menu"></ion-icon>
+    <button ion-fab mini color="secondary1" (click)="createHuerto()">
+      <ion-icon  name="add"></ion-icon>
     </button>
-      <ion-fab-list side="left">
-        <button ion-fab color="light1"><ion-icon name="add" (click)="createHuerto()"></ion-icon></button>
-        <button ion-fab color="light1"><ion-icon name="create"></ion-icon></button>
-        <button ion-fab color="danger"><ion-icon name="trash"></ion-icon></button>
-      </ion-fab-list>
-
   </ion-fab>
 </ion-content>

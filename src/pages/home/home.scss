@@ -4,6 +4,15 @@ ion-content {
   color: white !important;
   font-weight: bold;
 }
+
+#listHuerto{
+  text-align: center;
+  background-color: transparentize(darken((color($colors,primary)),10%),0.2) !important;
+  box-shadow: 7px 7px 7px (color($colors,dark1));
+  border-radius: 0 20px 0 20px;
+  margin:2% 0 5% 0 !important;
+  padding: 5% 0 5% 0 !important;
+}
 .toolbar-title{
   font-weight:bolder !important;
   font-size:250% !important;
@@ -11,6 +20,7 @@ ion-content {
 
 .listHuerto {
   background-color: transparent !important;
+  padding: 2%;
 }
 
 .itemListHuerto {
@@ -18,8 +28,7 @@ ion-content {
   opacity: 1;
   font-weight: bold;
   font-size: 150%;
-  border-bottom:3px groove color($colors,dark) !important;
-  border-left:3px groove color($colors,dark) !important;
+  box-shadow: 5px 5px 5px (color($colors,secondary1));
   border-radius: 0 20px 0 20px;
-  background-color: transparentize((color($colors,primary1)),0.2) !important;
+  background-color: transparentize((color($colors,primary)),0.2) !important;
 }

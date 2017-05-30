@@ -1,21 +1,38 @@
 /*
 Error: Undefined variable: "$colors".
-        on line 21 of home.scss
+        on line 10 of home.scss
 
-16: .itemListHuerto {
-17:   color: black !important;
-18:   opacity: 1;
-19:   font-weight: bold;
-20:   font-size: 150%;
-21:   border-bottom:3px groove color($colors,dark) !important;
-22:   border-left:3px groove color($colors,dark) !important;
-23:   border-radius: 0 20px 0 20px;
-24:   background-color: transparentize((color($colors,primary1)),0.2) !important;
-25: }
+5:   font-weight: bold;
+6: }
+7: 
+8: #listHuerto{
+9:   text-align: center;
+10:   background-color: transparentize(darken((color($colors,primary)),10%),0.2) !important;
+11:   box-shadow: 7px 7px 7px (color($colors,dark1));
+12:   border-radius: 0 20px 0 20px;
+13:   margin:2% 0 5% 0 !important;
+14:   padding: 5% 0 5% 0 !important;
+15: }
 
 Backtrace:
-home.scss:21
+home.scss:10
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:173:in `perform_arg'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `_perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:173:in `perform_arg'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `_perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:173:in `perform_arg'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
@@ -78,4 +95,4 @@ home.scss:21
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$colors\".\A         on line 21 of home.scss\A \A 16: .itemListHuerto {\A 17:   color: black !important;\A 18:   opacity: 1;\A 19:   font-weight: bold;\A 20:   font-size: 150%;\A 21:   border-bottom:3px groove color($colors,dark) !important;\A 22:   border-left:3px groove color($colors,dark) !important;\A 23:   border-radius: 0 20px 0 20px;\A 24:   background-color: transparentize((color($colors,primary1)),0.2) !important;\A 25: }"; }
+  content: "Error: Undefined variable: \"$colors\".\A         on line 10 of home.scss\A \A 5:   font-weight: bold;\A 6: }\A 7: \A 8: #listHuerto{\A 9:   text-align: center;\A 10:   background-color: transparentize(darken((color($colors,primary)),10%),0.2) !important;\A 11:   box-shadow: 7px 7px 7px (color($colors,dark1));\A 12:   border-radius: 0 20px 0 20px;\A 13:   margin:2% 0 5% 0 !important;\A 14:   padding: 5% 0 5% 0 !important;\A 15: }"; }

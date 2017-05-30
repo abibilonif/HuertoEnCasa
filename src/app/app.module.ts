@@ -14,7 +14,7 @@ import { HuertoFormPage } from '../pages/huerto-form/huerto-form';
     MyApp,
     HomePage,
     HuertoPage,
-    HuertoFormPage
+    HuertoFormPage,
   ],
   imports: [
     BrowserModule,
