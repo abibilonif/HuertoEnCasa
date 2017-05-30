@@ -1,25 +1,30 @@
 /*
-Error: (primary: #4F9B2B, secondary: #1E441E, danger: #E3655B, light: #87E05E, dark: #152614) isn't a valid CSS value.
-        on line 30 of app.scss
+Error: Undefined variable: "$colors".
+        on line 26 of app.scss
 
-25:   background-image: url("../assets/img/mainBg.jpg");
-26:   background-size: cover;
-27: }
-28: .toolbar-background{
-29:   background-image: url("../assets/img/titleBg.jpg")!important;
-30:   border: inset 3px color($colors,dark) !important;
+21: }
+22: ion-content{
+23:   background-color: transparent !important;
+24: }
+25: .toolbar-background{
+26:   background-color: color($colors,primary1)!important;
+27:   border-bottom: inset 3px color($colors,dark1) !important;
+28: }
+29: .toolbar-title{
+30: color: color($colors,dark1) !important;
 31: }
-32: .toolbar-title{
-33: color: color($colors,dark) !important;
-34: }
 
 Backtrace:
-app.scss:30
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/value/map.rb:52:in `to_s'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:162:in `join'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:162:in `to_value'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:155:in `to_literal'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:146:in `_perform'
+app.scss:26
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:173:in `perform_arg'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `_perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `map'
@@ -74,4 +79,4 @@ app.scss:30
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: (primary: #4F9B2B, secondary: #1E441E, danger: #E3655B, light: #87E05E, dark: #152614) isn't a valid CSS value.\A         on line 30 of app.scss\A \A 25:   background-image: url(\"../assets/img/mainBg.jpg\");\A 26:   background-size: cover;\A 27: }\A 28: .toolbar-background{\A 29:   background-image: url(\"../assets/img/titleBg.jpg\")!important;\A 30:   border: inset 3px color($colors,dark) !important;\A 31: }\A 32: .toolbar-title{\A 33: color: color($colors,dark) !important;\A 34: }"; }
+  content: "Error: Undefined variable: \"$colors\".\A         on line 26 of app.scss\A \A 21: }\A 22: ion-content{\A 23:   background-color: transparent !important;\A 24: }\A 25: .toolbar-background{\A 26:   background-color: color($colors,primary1)!important;\A 27:   border-bottom: inset 3px color($colors,dark1) !important;\A 28: }\A 29: .toolbar-title{\A 30: color: color($colors,dark1) !important;\A 31: }"; }

@@ -1,23 +1,29 @@
 /*
-Error: (primary: #4F9B2B, secondary: #1E441E, danger: #E3655B, light: #87E05E, dark: #152614) isn't a valid CSS value.
-        on line 29 of home.scss
+Error: Undefined variable: "$colors".
+        on line 21 of home.scss
 
-24: .itemListHuerto {
-25:   color: black !important;
-26:   opacity: 1;
-27:   font-weight: bold;
-28:   font-size: 150%;
-29:   border-bottom:3px groove color($colors,dark) !important;
-30:   background-color: transparentize((color($colors,primary)),0.2) !important;
-31: }
+16: .itemListHuerto {
+17:   color: black !important;
+18:   opacity: 1;
+19:   font-weight: bold;
+20:   font-size: 150%;
+21:   border-bottom:3px groove color($colors,dark) !important;
+22:   border-left:3px groove color($colors,dark) !important;
+23:   border-radius: 0 20px 0 20px;
+24:   background-color: transparentize((color($colors,primary1)),0.2) !important;
+25: }
 
 Backtrace:
-home.scss:29
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/value/map.rb:52:in `to_s'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:162:in `join'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:162:in `to_value'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:155:in `to_literal'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:146:in `_perform'
+home.scss:21
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:173:in `perform_arg'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `_perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
 /var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `map'
@@ -72,4 +78,4 @@ home.scss:29
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: (primary: #4F9B2B, secondary: #1E441E, danger: #E3655B, light: #87E05E, dark: #152614) isn't a valid CSS value.\A         on line 29 of home.scss\A \A 24: .itemListHuerto {\A 25:   color: black !important;\A 26:   opacity: 1;\A 27:   font-weight: bold;\A 28:   font-size: 150%;\A 29:   border-bottom:3px groove color($colors,dark) !important;\A 30:   background-color: transparentize((color($colors,primary)),0.2) !important;\A 31: }"; }
+  content: "Error: Undefined variable: \"$colors\".\A         on line 21 of home.scss\A \A 16: .itemListHuerto {\A 17:   color: black !important;\A 18:   opacity: 1;\A 19:   font-weight: bold;\A 20:   font-size: 150%;\A 21:   border-bottom:3px groove color($colors,dark) !important;\A 22:   border-left:3px groove color($colors,dark) !important;\A 23:   border-radius: 0 20px 0 20px;\A 24:   background-color: transparentize((color($colors,primary1)),0.2) !important;\A 25: }"; }

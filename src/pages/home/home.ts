@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { HuertoPage } from '../huerto/huerto';
+import { HuertoFormPage } from '../huerto-form/huerto-form';
+import {createAotCompiler} from "@angular/compiler";
 
 @Component({
   selector: 'page-home',
@@ -10,30 +13,37 @@ import { HuertoPage } from '../huerto/huerto';
 })
 export class HomePage{
   public myHuertos:Array<Huerto>;
-  public nombreHuerto:string;
   public empty=true;
 
-  constructor(public navCtrl: NavController, private storage: Storage, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private storage: Storage, public alertCtrl: AlertController, public modal:ModalController) {
     this.myHuertos=[];
     this.storage.get('nameHuerto').then((value) =>{
+      if(value!=null) {
         for (let i of value) {
           this.myHuertos.push(i);
-          this.empty=false;
+          this.empty = false;
         }
+      }else{
+        this.createHuerto();
+      }
     });
   }
-  saveStorage(){
-    this.storage.set('nameHuerto',this.myHuertos);
-    if(this.myHuertos.length==0){
-      this.empty=true;
-    }else{
-      this.empty=false;
-    }
-  }
-  setNameHuerto(){
-    this.myHuertos.push(new Huerto(this.nombreHuerto));
-    this.saveStorage();
-    this.nombreHuerto="";
+  // saveStorage(){
+  //   this.storage.set('nameHuerto',this.myHuertos);
+  //   if(this.myHuertos.length==0){
+  //     this.empty=true;
+  //   }else{
+  //     this.empty=false;
+  //   }
+  // }
+  // setNameHuerto(){
+  //   this.myHuertos.push(new Huerto(this.nombreHuerto));
+  //   this.saveStorage();
+  //   this.nombreHuerto="";
+  // }
+  createHuerto(){
+    let modal=this.modal.create(HuertoFormPage);
+    modal.present();
   }
   deleteHuerto(huerto){
       let confirm = this.alertCtrl.create({
@@ -51,8 +61,8 @@ export class HomePage{
               let index=this.myHuertos.indexOf(huerto);
               if(index > -1){
                 this.myHuertos.splice(index, 1);
+                this.storage.remove(huerto.name);
               }
-              this.saveStorage();
             }
           }
         ]

@@ -8,10 +8,10 @@ Error: File to import not found or unreadable: ionic.globals.
 4: 
 5: @import "ionic.globals";
 6: 
-7: 
-8: // Shared Variables
-9: // --------------------------------------------------
-10: // To customize the look and feel of this app, you can override
+7: // Shared Variables
+8: // --------------------------------------------------
+9: // To customize the look and feel of this app, you can override
+10: // the Sass variables found in Ionic's source scss files.
 
 Backtrace:
 variables.scss:5
@@ -57,4 +57,4 @@ variables.scss:5
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ionic.globals.\A         on line 5 of variables.scss\A \A 1: // Ionic Variables and Theming. For more info, please see:\A 2: // http://ionicframework.com/docs/v2/theming/\A 3: $font-path: \"../assets/fonts\";\A 4: \A 5: @import \"ionic.globals\";\A 6: \A 7: \A 8: // Shared Variables\A 9: // --------------------------------------------------\A 10: // To customize the look and feel of this app, you can override"; }
+  content: "Error: File to import not found or unreadable: ionic.globals.\A         on line 5 of variables.scss\A \A 1: // Ionic Variables and Theming. For more info, please see:\A 2: // http://ionicframework.com/docs/v2/theming/\A 3: $font-path: \"../assets/fonts\";\A 4: \A 5: @import \"ionic.globals\";\A 6: \A 7: // Shared Variables\A 8: // --------------------------------------------------\A 9: // To customize the look and feel of this app, you can override\A 10: // the Sass variables found in Ionic's source scss files."; }

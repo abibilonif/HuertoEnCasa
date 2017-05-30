@@ -14,21 +14,18 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-$colors:(
-  primary:    #4F9B2B,
-  secondary:  #1E441E,
-  danger:     #E3655B,
-  light:      #87E05E,
-  dark:       #152614
-);
-ion-content{
+
+#mainContent{
   background-image: url("../assets/img/mainBg.jpg");
   background-size: cover;
 }
+ion-content{
+  background-color: transparent !important;
+}
 .toolbar-background{
-  background-image: url("../assets/img/titleBg.jpg")!important;
-  border: inset 3px color($colors,dark) !important;
+  background-color: color($colors,primary1)!important;
+  border-bottom: inset 3px color($colors,dark1) !important;
 }
 .toolbar-title{
-color: color($colors,dark) !important;
+color: color($colors,dark1) !important;
 }
